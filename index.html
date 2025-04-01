@@ -1,208 +1,335 @@
-< !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Portfolio</title><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
 
-body {
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-/* Header Styles */
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        .logo {
+            display: flex;
+            align-items: center;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
 
-.logo-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
+        nav ul li {
+            margin-left: 20px;
+        }
 
-nav ul li {
-    margin-left: 20px;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
+        nav ul li a:hover {
+            color: #3498db;
+        }
 
-nav ul li a:hover {
-    color: #3498db;
-}
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #3498db;
+            color: white;
+        }
 
-/* Hero Section */
-.hero {
-    padding: 60px 0;
-    text-align: center;
-    background-color: #3498db;
-    color: white;
-}
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 30px;
-}
+        /* Main Content */
+        .main-content {
+            display: flex;
+            padding: 40px 0;
+            flex-wrap: wrap;
+        }
 
-/* Main Content */
-.main-content {
-    display: flex;
-    padding: 40px 0;
-}
+        .profile-section {
+            flex: 1;
+            padding-right: 30px;
+            min-width: 300px;
+        }
 
-.profile-section {
-    flex: 1;
-    padding-right: 30px;
-}
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-.profile-img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .video-section {
+            flex: 1;
+            min-width: 300px;
+        }
 
-.video-section {
-    flex: 1;
-}
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
+        /* Resume Section */
+        .resume-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-}
+        .resume-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
 
-.social-links {
-    margin-bottom: 20px;
-}
+        .download-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
 
-.social-links a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: color 0.3s;
-}
+        .download-btn:hover {
+            background: #2980b9;
+        }
 
-.social-links a:hover {
-    color: #3498db;
-}
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
 
-/* Page Content Styles */
-.page-content {
-    padding: 40px 0;
-}
+        .social-links {
+            margin-bottom: 20px;
+        }
 
-.page-content h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-.page-content p {
-    margin-bottom: 15px;
-}
+        .social-links a:hover {
+            color: #3498db;
+        }
 
-/* Contact Form */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-.form-group {
-    margin-bottom: 20px;
-}
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
 
-.form-group textarea {
-    height: 150px;
-}
+        .form-group textarea {
+            height: 150px;
+        }
 
-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
 
-button:hover {
-    background-color: #2980b9;
-}
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://via.placeholder.com/40" alt="Logo" class="logo-img">
+                    <span>My Portfolio</span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-</style></head><body>< !-- Header with Navigation --><header><div class="container"><nav><div class="logo"><img src="https://via.placeholder.com/40" alt="Logo" class="logo-img"><span>My Portfolio</span></div><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Me</a></li
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>This is my Portfolio</h1>
+            <p>Discover my work, skills, and professional journey</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <section class="profile-section">
+            <img src="images/profile.jpg" alt="My Profile Photo" class="profile-img">
+            <h2>SOLOMON MAKUWA</h2>
+            <p>Hello! I'm a passionate professional with experience in various fields. Here's a brief introduction about myself and my skills.</p>
+            <p>My journey began when I started studying at Sol Plaatje University, and I've been growing my skills ever since.</p>
+        </section>
+
+        <section class="video-section">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3>Featured Project</h3>
+            <p>This video showcases my latest project. Replace with your own project description.</p>
+        </section>
+    </div>
+
+    <!-- Resume Section -->
+    <div class="container">
+        <section id="resume" class="resume-section">
+            <h2>My Resume</h2>
+            <div class="resume-download">
+                <a href="docs/my-resume.pdf" download class="download-btn">
+                    Download PDF Resume
+                </a>
+            </div>
+            
+            <div class="resume-section">
+                <h3>Education</h3>
+                <div class="resume-item">
+                    <h4>Sol Plaatje University</h4>
+                    <p>Bachelor of Science in Computer Science | 2022-2024</p>
+                </div>
+                <div class="resume-item">
+                    <h4>Sol Plaatje University</h4>
+                    <p>Bachelor of Science honors Computer Science | In Progress </p>
+            </div>
+            
+            <div class="resume-section">
+                <h3>Assistant Teaching</h3>
+                <div class="resume-item">
+                    <h4>Job Title</h4>
+                    <p>Department of Education | 2021-2022</p>
+                    <p>Grade 11 and 12 Mathematics and Physical Sciences educator</p>
+                </div>
+                <div class="resume-item">
+                    <h4>Peer Mentor</h4>
+                    <p>Department of Higher Education | 2024-2024</p>
+                    <p></p>
+            </div>
+            
+            <div class="resume-section">
+                <h3>Skills</h3>
+                <div class="resume-item">
+                    <p>Statistics, C++, Database management, </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">FB</a>
+                <a href="https://twitter.com" target="_blank">TW</a>
+                <a href="www.linkedin.com/in/solomon-makuwa-952165178" target="_blank">LN</a>
+                <a href="https://github.com/Bra-moth" target="_blank">GH</a>
+            </div>
+            <p>Phone: (076) 532 9997</p>
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
