@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include 'includes/_header.html' %}
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <h1>Hi, I'm <span class="highlight">Solomon Makuwa</span></h1>
+          <p class="subtitle">Web Developer & UI/UX Designer</p>
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#projects" class="btn btn-secondary">View My Work</a>
+        </div>
+        <div class="hero-image">
+          <img
+            src="{{ url_for('static', filename='images/profile.jpg') }}"
+            alt="Profile Image"
+          />
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm a passionate web developer with 2 years of experience creating
+              modern, responsive websites and applications. I specialize in
+              front-end development with expertise in HTML, CSS, JavaScript, and
+              React.
+            </p>
+            <p>
+              When I'm not coding, you can find me hiking, reading sci-fi
+              novels, or experimenting with new recipes in the kitchen.
+            </p>
+            <div class="skills">
+              <h3>My Skills</h3>
+              <div class="skill-tags">
+                <span>HTML/CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Python</span>
+                <span>Flask</span>
+                <span>UI/UX Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <h2 class="section-title">
+          Featured <span class="highlight">Projects</span>
+        </h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img
+              src="{{ url_for('static', filename='images/project1.jpg') }}"
+              alt="Project 1"
+            />
+            <h3>Supply Chain Management System</h3>
+            <p>A fully responsive online store with cart functionality.</p>
+            <div class="project-links">
+              <a href="#" class="btn btn-small">Live Demo</a>
+              <a href="#" class="btn btn-small btn-outline">Code</a>
+            </div>
+          </div>
+          <!-- Add more project cards -->
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2 class="section-title">
+          Get In <span class="highlight">Touch</span>
+        </h2>
+        <div class="contact-container">
+          <form class="contact-form">
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-envelope"></i> makuwasolomon6@gmail.com</p>
+            <p><i class="fas fa-phone"></i> (+27) 765-2997</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {% include 'includes/_footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
