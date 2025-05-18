@@ -1,4 +1,7 @@
 from flask import Blueprint, render_template
+import os
+from app import db
+
 
 main_bp = Blueprint('main', __name__)
 
